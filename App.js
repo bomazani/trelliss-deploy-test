@@ -3,14 +3,16 @@ import 'react-native-gesture-handler';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>
+    <View style={styles.container}>
+    {/* <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> */}
+      <Text style={styles.containerText}>
         Trelliss Home Screen
       </Text>
+      <Image source={require('./assets/TrellissBackground.png')}/>
     </View>
   )
 }
@@ -34,4 +36,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  containerText:{
+    fontWeight: 'bold',
+    fontSize: 30,
+  }
 });
