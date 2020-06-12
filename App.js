@@ -8,9 +8,19 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 function HomeScreen() {
   return (
     <View style={styles.container}>
-    {/* <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> */}
       <Text style={styles.containerText}>
         Trelliss Home Screen
+      </Text>
+      <Image source={require('./assets/TrellissBackground.png')}/>
+    </View>
+  )
+}
+
+function DetailsScreen() {
+  return(
+    <View style={styles.container}>
+      <Text style={styles.containerText}>
+        Trelliss Details Screen
       </Text>
       <Image source={require('./assets/TrellissBackground.png')}/>
     </View>
@@ -24,6 +34,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Home' component={HomeScreen} />
+        <Stack.Screen name='Details' component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
