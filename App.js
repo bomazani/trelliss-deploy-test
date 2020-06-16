@@ -5,50 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View, Image, Button, } from 'react-native';
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.containerText}>
-        Trelliss Home Screen
-      </Text>
-      <Image source={require('./assets/TrellissBackground.png')}/>
-      <Button 
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  )
-}
-
-function DetailsScreen({ navigation }) {
-  return(
-    <View style={styles.container}>
-      <Text style={styles.containerText}>
-        Trelliss Details Screen
-      </Text>
-      <Image source={require('./assets/TrellissBackground.png')}/>
-      <Button 
-        title="Go to Todo Page"
-        onPress={() => navigation.navigate('Todo')}
-      />
-    </View>
-  )
-}
-
-function TodoScreen({ navigation }) {
-  return(
-    <View style={styles.container}>
-      <Text style={styles.containerText}>
-        Trelliss Todo Screen
-      </Text>
-      <Image source={require('./assets/TrellissBackground.png')}/>
-      <Button 
-        title="Go to Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-    </View>
-  )
-}
+import DetailsScreen from './screens/detailsScreen';
+import HomeScreen from './screens/homeScreen';
+import TodoScreen from './screens/todoScreen';
 
 const Stack = createStackNavigator();
 
