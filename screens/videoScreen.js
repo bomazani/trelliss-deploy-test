@@ -4,23 +4,28 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View, Image, Button, } from 'react-native';
+import { Video } from 'expo-av';
 
-export default function HomeScreen({ navigation }) {
+export default function VideoScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.containerText}>
-        Trelliss Home Screen
+        Trelliss Video Screen
       </Text>
-      <Image source={require('./../assets/TrellissBackground.png')}/>
+      <Video
+        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+        rate={1.0}
+        volume={1.0}
+        isMuted={false}
+        resizeMode="cover"
+        shouldPlay
+        isLooping
+        style={{ width: 300, height: 300 }}
+      />      
       <Button 
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        title="Go to Home"
+        onPress={() => navigation.navigate('Home')}
       />
-      <Button 
-        title="Go to Videos"
-        onPress={() => navigation.navigate('Videos')}
-      />
-
     </View>
   )
 }

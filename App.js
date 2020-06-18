@@ -8,6 +8,7 @@ import { StyleSheet, Text, View, Image, Button, } from 'react-native';
 import DetailsScreen from './screens/detailsScreen';
 import HomeScreen from './screens/homeScreen';
 import TodoScreen from './screens/todoScreen';
+import VideoScreen from './screens/videoScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
         <Stack.Screen name='Home' component={HomeScreen} options={{ title: 'Welcome!' }} />
         <Stack.Screen name='Details' component={DetailsScreen} />
         <Stack.Screen name='Todo' component={TodoScreen} />
+        <Stack.Screen name='Videos' component={VideoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
